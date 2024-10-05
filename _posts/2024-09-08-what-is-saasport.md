@@ -34,6 +34,7 @@ RESTful API作为优秀的查询和易用的修改风格，已经渐渐成为主
 叠加分配机制，为普通人创造更多的被动收入管道，解决开发者“热爱但不赚钱”的尴尬矛盾。
 # 远景 (What is SAASport?)
 构建针对小而美的企业或个体的协作基础设施。
+## 计费
 复杂计费轻而易举，实时结算，依用计费，现金流一目了然。
 全渠道价格页面注册即生成。
 复杂计费规则可定制可分享。在SAASport后台部署定制规则后即可立即体现到计费页面。
@@ -50,17 +51,55 @@ API市场的自动化验证套餐帮助外行人更快地攒出高质量的应�
 衍生品也会用于简化和吸引投资。并会通过AI等手段匹配甚至定制金融产品。
 # 约束
 ## 安全
-1. 仅仅共享用户id和昵称，而非用户详情。
+1. 租户仅仅应该共享用户id和昵称，而非用户详情。
 2. 保密协议
 
 # How?
-## 
+## 里程碑
+1. SAAS计费自动化
+2. 租户DSL自定义部署计费规则
+3. 自动扣费
+4. API市场
+5. API招标和自动化验收
+6. API众筹
+7. API股权众筹
+
 ## 技术架构
+### 语言选择
+#### JS/TS
+前端没得选
+#### Scala
+Java生态中函数响应式编程的最优选项。Clojure缺乏类型系统的表现力和规范力。
+而Kotlin的Lens还是需要代码生成，实用主义不纯的选择限制了其函数式编程的潜力。
+Java的新版本虽然加入了很多类似Scala的特性，但是很多语言层面的固有缺陷仍然是
+无法直视的（无可选参数、泛型和解构太弱、函数调用需要apply）。
+
 ### Dashboard租户后台
-Next.js
+Next.js + docker-compose
+#### 设计权衡
+* 研发效率
+  * 成熟度
+  * 架构复杂度
+* 代码生成难度
+* 部署成本
+  * 由于在中国公开IP至少预置一台服务器，因此无服务器对比docker-compose并无成本优势。
+
 ### Widget
-React.js + Vite
+React.js + Vite + AWS Lambda
+#### 设计权衡
+* SDK分发js包尺寸
+
 ### 支付API
-Scala zio-lambda. Alipay 只提供Java SDK
+Scala zio-lambda + AWS Lambda native image
+#### 设计权衡
+* 支付提供商SDK语言兼容性: 如支付宝只提供Java SDK。
+* 性能
+* 并发
+* 部署成本
+* 开发者风格偏好：函数响应式编程
+
 ### 价格API
-APIGateway REST + lambda node
+APIGateway REST + AWS Lambda nodejs + DynamoDB
+#### 设计权衡
+* 研发效率
+* 部署成本
