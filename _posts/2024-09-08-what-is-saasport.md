@@ -168,6 +168,9 @@ APIGateway REST + AWS Lambda nodejs + DynamoDB
 * 研发效率
 * 部署成本
 
+# 进展
+SAASport MVP已经开启内测，目前仅开放给符合条件的用户提前使用。
+
 ---
 SAASport，⼀⾏代码开启全端互联⽹SaaS计费⽀付。
 
