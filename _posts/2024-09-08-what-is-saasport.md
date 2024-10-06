@@ -116,3 +116,4 @@ APIGateway REST + AWS Lambda nodejs + DynamoDB
 #### 设计权衡
 * 研发效率
 * 部署成本
+
