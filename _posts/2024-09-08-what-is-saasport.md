@@ -164,9 +164,9 @@ Java生态中函数响应式编程的最优选项。Clojure缺乏类型系统的
 Java的新版本虽然加入了很多类似Scala的特性，但是很多语言层面的固有缺陷仍然是
 无法直视的（无可选参数、泛型和解构太弱、函数调用需要apply）。
 
-## 服务分解
+### 服务分解
 
-### Dashboard租户后台
+#### Dashboard租户后台
 
 Next.js + docker-compose
 * 研发效率
@@ -176,13 +176,13 @@ Next.js + docker-compose
 * 部署成本
   * 由于在中国公开IP至少预置一台服务器，因此无服务器对比docker-compose并无成本优势。
 
-### Widget
+#### Widget
 
 React.js + Vite + AWS Lambda
 * SDK分发js包尺寸
 * 多种前端集成解决方案
 
-### 支付API
+#### 支付API
 
 Scala zio-lambda + AWS Lambda native image
 * 支付提供商SDK语言兼容性: 如支付宝只提供Java SDK。
@@ -191,7 +191,7 @@ Scala zio-lambda + AWS Lambda native image
 * 部署成本
 * 开发者风格偏好：函数响应式编程
 
-### 价格API
+#### 价格API
 
 APIGateway REST + AWS Lambda nodejs + DynamoDB
 * 研发效率
