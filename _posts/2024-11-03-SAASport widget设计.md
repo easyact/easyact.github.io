@@ -19,6 +19,7 @@ React + Vite
 低延迟，配额内免费，配额外依据流量付费。
 
 ## AWS codebuild + codepipeline
+
 这是最低基础设施和开发成本的选项。
 虽然没有很酷的yml IaC代码，但是管道并不需要频繁地重建。
 因此IaC的调试成本并没有很好的ROI。
