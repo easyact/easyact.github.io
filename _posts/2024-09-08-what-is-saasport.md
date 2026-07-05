@@ -183,6 +183,8 @@ Next.js + docker-compose
 * 代码生成难度
 * 部署成本
   * 由于在中国公开IP至少预置一台服务器，因此无服务器对比docker-compose并无成本优势。
+##### 未来趋势
+SST + OpenNext https://sst.dev/docs/start/aws/nextjs
 
 #### Widget
 
